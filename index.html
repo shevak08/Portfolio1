@@ -456,18 +456,19 @@
   </div>
 </footer>
 <script>
- 
+/* =====================================================
+   PROJECT SLIDER (MOUSE + TOUCH)
+===================================================== */
 const slider = document.getElementById("slider");
 
 let isDown = false;
 let startX;
 let scrollLeft;
 
-// ===== MOUSE DRAG ONLY =====
+/* MOUSE DRAG */
 slider.addEventListener("mousedown", (e) => {
   isDown = true;
   slider.style.cursor = "grabbing";
-
   startX = e.pageX - slider.offsetLeft;
   scrollLeft = slider.scrollLeft;
 });
@@ -484,17 +485,13 @@ slider.addEventListener("mouseup", () => {
 
 slider.addEventListener("mousemove", (e) => {
   if (!isDown) return;
-
   e.preventDefault();
-
   const x = e.pageX - slider.offsetLeft;
   const walk = (x - startX) * 1.6;
-
   slider.scrollLeft = scrollLeft - walk;
 });
 
-
-// ===== MOBILE TOUCH =====
+/* TOUCH */
 slider.addEventListener("touchstart", (e) => {
   startX = e.touches[0].pageX;
   scrollLeft = slider.scrollLeft;
@@ -503,78 +500,88 @@ slider.addEventListener("touchstart", (e) => {
 slider.addEventListener("touchmove", (e) => {
   const x = e.touches[0].pageX;
   const walk = (x - startX) * 1.6;
-
   slider.scrollLeft = scrollLeft - walk;
 });
 
 
-
-
-// ===== SINGLE SCROLL ANIMATION OBSERVER =====
-const scrollObserver = new IntersectionObserver((entries)=>{
-  entries.forEach(entry=>{
-
-    if(entry.intersectionRatio > 0.30){
-
+/* =====================================================
+   SCROLL REVEAL ANIMATION
+===================================================== */
+const scrollObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.intersectionRatio > 0.3) {
       entry.target.classList.add("show");
-
-      // animate only once
       scrollObserver.unobserve(entry.target);
     }
-
   });
-},{
+}, {
   threshold: [0, 0.3, 0.6, 1]
 });
 
-
-// Attach sliding elements
 document.querySelectorAll(
-  ".about-text, .services-right, , .stack, .project-left"
-).forEach(el=>{
-
-  el.classList.add("hidden");   // start hidden
+  ".about-text, .services-right, .stack, .project-left"
+).forEach(el => {
+  el.classList.add("hidden");
   scrollObserver.observe(el);
-
 });
 
 
-// ===== Image Morph =====
+/* =====================================================
+   IMAGE MORPH ON SCROLL
+===================================================== */
 const aboutImg = document.querySelector(".about-left img");
 
-window.addEventListener("scroll", ()=>{
-  if(window.scrollY > 300){
-    aboutImg.classList.add("morph-active");
-  }
-});
-function toggleNav() {
-  document.querySelector(".nav-links").classList.toggle("active");
+if (aboutImg) {
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      aboutImg.classList.add("morph-active");
+    }
+  });
 }
 
-/* CLOSE NAV WHEN ANY LINK CLICKED */
+
+/* =====================================================
+   NAVBAR (FINAL & CLEAN)
+===================================================== */
+const navLinks = document.querySelector(".nav-links");
+const navToggle = document.querySelector(".nav-toggle");
+
+/* TOGGLE MENU */
+function toggleNav() {
+  navLinks.classList.toggle("active");
+}
+
+/* CLOSE WHEN LINK CLICKED */
 document.querySelectorAll(".nav-links a").forEach(link => {
   link.addEventListener("click", () => {
-    document.querySelector(".nav-links").classList.remove("active");
+    navLinks.classList.remove("active");
   });
 });
-const navLinks = document.querySelector(".nav-links");
 
-// ===== HIDE NAV ON SCROLL =====
-let lastScrollY = window.scrollY;
+/* CLOSE ON SCROLL / TOUCH */
+window.addEventListener("wheel", closeNav, { passive: true });
+window.addEventListener("touchmove", closeNav, { passive: true });
 
-window.addEventListener("scroll", () => {
-  // If navbar menu is open, close it when user scrolls
+function closeNav() {
   if (navLinks.classList.contains("active")) {
     navLinks.classList.remove("active");
   }
+}
 
-  lastScrollY = window.scrollY;
+/* CLOSE WHEN CLICKING OUTSIDE */
+document.addEventListener("click", (e) => {
+  if (
+    navLinks.classList.contains("active") &&
+    !navLinks.contains(e.target) &&
+    !navToggle.contains(e.target)
+  ) {
+    navLinks.classList.remove("active");
+  }
 });
-
-
 </script>
 
 </body>
 </html>
+
 
 

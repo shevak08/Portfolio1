@@ -557,10 +557,24 @@ document.querySelectorAll(".nav-links a").forEach(link => {
     document.querySelector(".nav-links").classList.remove("active");
   });
 });
+const navLinks = document.querySelector(".nav-links");
+
+// ===== HIDE NAV ON SCROLL =====
+let lastScrollY = window.scrollY;
+
+window.addEventListener("scroll", () => {
+  // If navbar menu is open, close it when user scrolls
+  if (navLinks.classList.contains("active")) {
+    navLinks.classList.remove("active");
+  }
+
+  lastScrollY = window.scrollY;
+});
 
 
 </script>
 
 </body>
 </html>
+
 

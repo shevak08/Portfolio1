@@ -82,57 +82,6 @@ body::-webkit-scrollbar-thumb {
 
 
 
-/* NAVBAR */
-.navbar {
-  position: sticky;
-  top: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1000;
-}
-
-/* Hide nav links by default */
-.nav-links {
-  position: fixed;
-  top: 60px;
-  right: -100%;
-  width: 220px;
-  background: #120824;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding: 20px;
-  border-radius: 12px;
-  transition: 0.4s ease;
-}
-
-.nav-links a {
-  color: #fff;
-  text-decoration: none;
-}
-
-/* Show menu when active */
-.nav-links.active {
-  right: 20px;
-}
-
-/* Hamburger icon */
-.nav-toggle {
-  color: #000;
-  position: sticky;   /* stays visible while scrolling */
-  top: 20px;
-  right: 30px;
-  font-size: 26px;
-  cursor: pointer;
-  z-index: 9999;
-}
-
-
-
 /* SECTION */
 .section {
   padding: 50px 80px ;
@@ -1046,6 +995,7 @@ img {
 
 .footer-container {
   display: grid;
+   grid-template-columns: 1fr;
   align-items: start;
    gap: 30px;
 }
@@ -1169,6 +1119,7 @@ img {
     padding: 8px 12px;
   }
 }
+
 
 
 

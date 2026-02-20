@@ -1046,7 +1046,6 @@ img {
 
 .footer-container {
   display: grid;
-  grid-template-columns: 1fr;
   align-items: start;
    gap: 30px;
 }
@@ -1084,7 +1083,7 @@ img {
 }
 
 .social-links li {
-  border-bottom: 1px solid rgba(255,255,255,0.2);
+   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .social-links a {
@@ -1170,6 +1169,7 @@ img {
     padding: 8px 12px;
   }
 }
+
 
 
 

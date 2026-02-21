@@ -377,7 +377,6 @@
 
     <!-- LEFT -->
     <div class="footer-left">
-      <h1 class="footer-name">Shevak R V</h1>
 
       <div class="footer-info">
         <div>
@@ -422,32 +421,6 @@
     <a class="resume" href="Shevak R V.pdf" target="_self">RESUME ⧉</a>
   </div>
 </footer>
-<script>
-  const navLinks = document.querySelector(".nav-links");
-const navToggle = document.querySelector(".nav-toggle");
-
-function toggleNav() {
-  navLinks.classList.toggle("active");
-}
-
-// Close when clicking link
-document.querySelectorAll(".nav-links a").forEach(link => {
-  link.addEventListener("click", () => {
-    navLinks.classList.remove("active");
-  });
-});
-
-// Close when clicking outside
-document.addEventListener("click", (e) => {
-  if (
-    navLinks.classList.contains("active") &&
-    !navLinks.contains(e.target) &&
-    !navToggle.contains(e.target)
-  ) {
-    navLinks.classList.remove("active");
-  }
-});
-
-</script>
 </body>
 </html>
+

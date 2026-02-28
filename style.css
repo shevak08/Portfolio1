@@ -641,7 +641,7 @@ img {
   text-decoration: none;
   font-size: 16px;
 }
-.footer-details h3 {
+.footer-details{
   color: #72d5ff;
   text-decoration: none;
 }
@@ -822,8 +822,9 @@ img {
   .footer-right {
     margin-left: 1px;
 }
-.footer-name{
-  font-size:18px ;
+.footer-details{
+  color: #72d5ff;
+  text-decoration: none;
 }
 .footer-info a {
   color: #000000;
@@ -961,10 +962,7 @@ img {
    gap: 30px;
 }
 
-.footer-details h3 {
-  text-decoration: none;
-  color: #b26bff;
-}
+
 
 .footer-info span {
   color: #000000;
@@ -1286,6 +1284,7 @@ img {
 
 
 }
+
 
 
 

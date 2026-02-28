@@ -589,13 +589,6 @@ img {
 }
 
 /* LEFT */
-.footer-name {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 48px;
-  font-weight: 450;
-  letter-spacing: 2px;
-  margin-bottom: 40px;
-}
 
 .footer-info span {
   color: #000000;
@@ -649,7 +642,7 @@ img {
   font-size: 16px;
 }
 .footer-details {
-  color: blue;
+  color: #72d5ff;
   text-decoration: none;
 }
 .footer-info a:hover {
@@ -1298,6 +1291,7 @@ img {
 
 
 }
+
 
 
 

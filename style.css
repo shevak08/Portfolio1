@@ -56,17 +56,10 @@ body::-webkit-scrollbar-thumb {
 .resume {
   display: inline-block;
   padding: 10px 22px;
-  background: #72d5ff;
-  color: #ffffff;
   text-decoration: none;
   font-weight: 600;
   border-radius: 25px;
   transition: all 0.3s ease;
-  border: 2px solid transparent;
-}
-
-/* Hover Effect */
-.resume:hover {
   background: #ffffff;
   color: #72d5ff;
   border: 2px solid #72d5ff;
@@ -1291,6 +1284,7 @@ img {
 
 
 }
+
 
 
 

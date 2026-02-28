@@ -56,10 +56,17 @@ body::-webkit-scrollbar-thumb {
 .resume {
   display: inline-block;
   padding: 10px 22px;
+  background: #72d5ff;
+  color: #ffffff;
   text-decoration: none;
   font-weight: 600;
   border-radius: 25px;
   transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+/* Hover Effect */
+.resume:hover {
   background: #ffffff;
   color: #72d5ff;
   border: 2px solid #72d5ff;
@@ -954,14 +961,9 @@ img {
    gap: 30px;
 }
 
-
-
-
-/* LEFT */
-.footer-name {
-  font-size: 18px;
-  font-weight: 500;
-  letter-spacing: 2px;
+.footer-details h3 {
+  text-decoration: none;
+  color: #b26bff;
 }
 
 .footer-info span {
@@ -1284,6 +1286,7 @@ img {
 
 
 }
+
 
 
 

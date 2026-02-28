@@ -648,7 +648,10 @@ img {
   text-decoration: none;
   font-size: 16px;
 }
-
+.footer-detail {
+  color: blue;
+  text-decoration: none;
+}
 .footer-info a:hover {
   text-decoration: none;
   color: #b26bff;
@@ -1295,6 +1298,7 @@ img {
 
 
 }
+
 
 
 
